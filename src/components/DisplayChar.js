@@ -1,5 +1,5 @@
 import React from 'react'
-import characterContext from '../context/myContext'
+import characterContext from '../context/charContext'
 
 const DisplayChar = (props) => {
   const char = React.useContext(characterContext)
