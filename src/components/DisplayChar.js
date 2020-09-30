@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import characterContext from '../context/myContext'
 
 const DisplayChar = (props) => {
