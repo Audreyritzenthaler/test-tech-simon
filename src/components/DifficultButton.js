@@ -10,7 +10,7 @@ const DifficultButton = ({ more, less }) => {
 
   return (
     <div>
-      <p>Level difficult : {level.levelDifficult}</p>
+      <p className='levelD'>Level difficult : {level.levelDifficult}</p>
       <Button text='+ diffcult' myfunc={more}/>
       <Button text='- difficult'myfunc={less}/>
     </div>

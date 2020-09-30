@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import DifficultButton from './components/DifficultButton'
 import DisplayChar from './components/DisplayChar'
 import Input from './components/Input'
+import Score from './components/Score'
 
 import { randomChar, randomTime } from './components/helpers/characters'
 
@@ -38,13 +39,17 @@ const App = () => {
   const moreDifficult = (e) => {
     min -= 100
     max -= 100
-    setlevelDifficult(levelDifficult + 1)
+    if (levelDifficult !== 10) {
+      setlevelDifficult(levelDifficult + 1)
+    }
   }
 
   const lessDifficult = (e) => {
     min += 100
     max += 100
-    setlevelDifficult(levelDifficult - 1)
+    if (levelDifficult !== 0) {
+      setlevelDifficult(levelDifficult - 1)
+    }
   }
 
   // 
@@ -61,13 +66,17 @@ const App = () => {
       <characterContext.Provider
         value={{ character: character }}
       >
-        <div className="App">
-          <p>OK : {count.ok} and KO : {count.ko}</p>
-          <Input onChange={value => setCharacterInput(value)}/>
-          <div>
-            <DifficultButton more={moreDifficult} less={lessDifficult} />
+        <h1 className='title'>Let's play ! (first part)</h1>
+        <div className='App'>
+          <div className="part1">
+            <Score count={count}/>
+            <Input onChange={value => setCharacterInput(value)}/>
+            <div>
+              <DifficultButton more={moreDifficult} less={lessDifficult} />
+            </div>
+            <DisplayChar class={ win ? 'green' : 'red' }/>
           </div>
-          <DisplayChar class={ win ? 'green' : 'red' }/>
+          <div className='part2'></div>
         </div>
       </characterContext.Provider>
     </levelContext.Provider>

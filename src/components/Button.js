@@ -1,10 +1,11 @@
 import React from 'react'
+import './Button.css'
 
 const Button = ({ text, myfunc }) => {
 
 return (
   <>
-    <button onClick={e => myfunc(e)}>{text}</button>
+    <button className='big-button' onClick={e => myfunc(e)}>{text}</button>
   </>
   )
 }
