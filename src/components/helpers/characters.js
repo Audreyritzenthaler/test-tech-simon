@@ -4,16 +4,7 @@ export const randomChar = () => {
    return arrayChar[randomNumber]
 }
 
-export const moreDifficult = (e) => {
-   console.log("+")
- }
-
-export const lessDifficult = (e) => {
-   console.log("-")
- }
-
-export const randomTime = () => {
-   const max = 3000
-   const min = 800
+export const randomTime = (min, max) => {
+   console.log(min)
    return Math.random() * (max - min) + min
 }

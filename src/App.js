@@ -30,12 +30,31 @@ const App = () => {
     }
   }
 
+  // difficult function, doesn't work 
+
+  let max = 3000
+  let min = 800
+
+  const moreDifficult = (e) => {
+    min -= 100
+    max -= 100
+    setlevelDifficult(levelDifficult + 1)
+  }
+
+  const lessDifficult = (e) => {
+    min += 100
+    max += 100
+    setlevelDifficult(levelDifficult - 1)
+  }
+
+  // 
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCharacter(randomChar())
-    }, randomTime())
+    }, randomTime(min, max))
     return () => clearInterval(interval)
-  }, [])
+  }, [min, max])
 
   return (
     <levelContext.Provider value={{ levelDifficult: levelDifficult }}>
@@ -46,7 +65,7 @@ const App = () => {
           <p>OK : {count.ok} and KO : {count.ko}</p>
           <Input onChange={value => setCharacterInput(value)}/>
           <div>
-            <DifficultButton />
+            <DifficultButton more={moreDifficult} less={lessDifficult} />
           </div>
           <DisplayChar class={ win ? 'green' : 'red' }/>
         </div>
