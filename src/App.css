@@ -1,5 +1,17 @@
-.App {
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.part1 {
   text-align: center;
+  width: 20%;
+  margin: 2em auto;
+  padding: 2em;
+  color: white;
+  background-color: rgb(216, 216, 216);
+  border-radius: 8px;
+  box-shadow: 5px 5px 15px rgb(146, 146, 146);
 }
 
 .red {
@@ -8,4 +20,24 @@
 
 .green {
   color: green;
+}
+
+.title {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  border-radius: 15px;
+  padding: 3em;
+  background-color: rgb(190, 190, 190);
+}
+
+.displayScore {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0;
+  border-bottom: solid 1px rgb(255, 255, 255);
+  margin-bottom: 1em;
+}
+
+.levelD {
+  margin: 1em auto;
 }
